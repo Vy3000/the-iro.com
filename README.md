@@ -9,18 +9,16 @@ styles.css                          styling; colours and fonts at the top
 assets/img/                         photos
 assets/fonts/                       optional custom serif
 CNAME                               tells GitHub Pages to serve the-iro.com
-get-images.sh                       copies the photos from Wix
-.github/workflows/fetch-images.yml  runs get-images.sh on GitHub automatically
+get-images.sh                       original download script (already done)
 ```
 
 All contact buttons go to **info@the-iro.com**.
 
 ## Publishing
-1. Upload everything in this folder to a GitHub repository.
-   The "Fetch images from Wix" action then copies the photos in by itself
-   (check the **Actions** tab — do this before cancelling Wix).
-2. Settings → Pages → Source: "Deploy from a branch" → `main` / root → Save.
-3. Settings → Pages → Custom domain: `the-iro.com` → Save.
+Photos are already copied from Wix and resized for the web.
+
+1. Settings → Pages → Source: "Deploy from a branch" → `main` / root → Save.
+2. Settings → Pages → Custom domain: `the-iro.com` → Save.
 
 ## DNS at GoDaddy
 - `A` records for `@`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
