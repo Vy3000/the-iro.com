@@ -1,0 +1,146 @@
+/* THE IRO STUDIO — static rebuild of the Wix page */
+
+/* The Wix site uses a custom serif that was uploaded to Wix. If you hold the
+   licence, save it as assets/fonts/iro-serif.woff2 and it is used
+   automatically; otherwise Cormorant Garamond stands in. */
+@font-face {
+  font-family: "IRO Serif";
+  src: url("assets/fonts/iro-serif.woff2") format("woff2");
+  font-display: swap;
+}
+
+:root {
+  --dark: #2f2e2e;
+  --sand: #eeece8;
+  --serif: "IRO Serif", "Cormorant Garamond", Georgia, serif;
+  --sans: "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--dark);
+  color: #fff;
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- shared ---------- */
+.dark { background: var(--dark); }
+.btn {
+  display: inline-block;
+  background: #fff;
+  color: #000;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: .1em;
+  text-decoration: none;
+  padding: 9px 30px;
+  transition: background .25s, color .25s;
+}
+.btn:hover { background: var(--sand); }
+.eyebrow { font-size: 17px; letter-spacing: .02em; }
+.label { font-size: 20px; font-weight: 700; }
+.rule-h { display: block; width: 40px; height: 1px; background: #fff; margin: 26px 0; }
+.rule-h--center { margin: 18px auto 30px; }
+.rule-v { display: block; width: 1px; height: 90px; background: #fff; margin: 40px auto 50px; }
+
+/* ---------- hero ---------- */
+.hero__img { width: 100%; height: 94vw; max-height: 1400px; object-fit: cover; }
+
+/* ---------- intro ---------- */
+.intro { text-align: center; padding: 110px 24px 120px; }
+.headline {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(34px, 4.4vw, 54px);
+  line-height: 1.2;
+  margin: 18px 0 30px;
+}
+.lead { font-size: clamp(19px, 2vw, 26px); max-width: 520px; margin: 0 auto 40px; line-height: 1.45; }
+
+/* ---------- split images ---------- */
+.split { display: grid; grid-template-columns: 1fr 1fr; }
+.split img { width: 100%; height: clamp(300px, 49vw, 700px); object-fit: cover; }
+
+/* ---------- about ---------- */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  align-items: center;
+  gap: 60px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 110px 40px;
+}
+.about__title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 36px;
+  letter-spacing: .08em;
+  line-height: 1.6;
+  text-align: center;
+}
+.about__text p { color: #fafafa; max-width: 580px; margin-bottom: 18px; }
+
+/* ---------- what we do ---------- */
+.what { text-align: center; padding: 50px 40px 110px; }
+.what__title { font-size: clamp(32px, 3vw, 43px); font-weight: 700; }
+.what__lead { font-size: 18px; max-width: 620px; margin: 0 auto 50px; }
+.what__note { font-size: 18px; max-width: 520px; margin: 50px auto 0; }
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: left;
+}
+.tile img { width: 100%; aspect-ratio: 245 / 490; object-fit: cover; }
+.tile p {
+  font-family: var(--serif);
+  font-size: 21px;
+  line-height: 1.3;
+  padding: 22px 16px;
+  min-height: 145px;
+}
+.tile--charcoal p { background: #282626; }
+.tile--sand p { background: var(--sand); color: #6f6e6a; }
+.tile--teal p { background: #274b4e; }
+.tile--navy p { background: #203e66; }
+
+/* ---------- closing ---------- */
+.closing img { width: 100%; height: clamp(360px, 53vw, 780px); object-fit: cover; }
+
+/* ---------- footer ---------- */
+.footer {
+  background: #000;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: .03em;
+  padding: 60px 20px 40px;
+}
+.footer a { text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+.footer__mail { color: #8a8a8a; margin-top: 24px; }
+.footer__copy { color: #595959; margin-top: 8px; }
+
+/* ---------- mobile ---------- */
+@media (max-width: 820px) {
+  .hero__img { height: auto; aspect-ratio: 4 / 5; }
+  .intro { padding: 80px 24px; }
+  .split { grid-template-columns: 1fr; }
+  .split img { height: 70vw; }
+  .about { grid-template-columns: 1fr; gap: 30px; padding: 80px 28px; }
+  .what { padding: 40px 20px 80px; }
+  .tiles { grid-template-columns: 1fr 1fr; }
+  .tile img { aspect-ratio: 3 / 4; }
+  .tile p { font-size: 18px; min-height: 100px; }
+}
